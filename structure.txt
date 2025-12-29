@@ -20,3 +20,11 @@ The Main Structure:
         |--> import declarative_base from sqlalchemy.ext.declarative
         |--> create base from declarative_base
         |--> define table class with Columns by mentioning datatypes of Columns
+
+
+Authentication and Autherization:
+Step 1 :- User logins with credentials(Username/Password).
+Step 2 :- Application checks the credentials are exists or not. If exists a JWT will be generated with the respective access to the endpoints and expiry. Then it will be sent back to user.
+Step 3 :- User stores the JWT in cache or local system.
+Step 4 :- User calls the respective API endpoints with payload and JWT in headers.
+Step 5 :- Application verifies that JWT is valid or not, if it is valid it allows the api call otherwise raises an HTTP error response.
